@@ -2,6 +2,7 @@ public class Solution04{
 	public static boolean palin_permu(String s){
 		//If a string is a permutation of a palindrome, there should be at most one char that has odd frequency
 		//Here we assume that the string s only contains spaces and 'a-z', and 'A-Z'
+		//the code runs in constant space and O(n) time
 		int num_odd_freq=0;
 		int [] char_freq= new int [26];
 		for(int i=0; i<s.length(); i++){ 
