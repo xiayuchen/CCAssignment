@@ -3,6 +3,7 @@ public class Solution03{
 		//the length of space and "%20" is different
 		//If we start from the left side of the string, every time when we replace a space with "%20" the characters after will need to be moved 
 		//to the right by 2, which is inefficient, so we start from the right of the string
+		//code runs in constant space and O(n) time
 		int num_space=0;
 		for(int i=0;i<true_len;i++)
 			if(s[i]==' ')
