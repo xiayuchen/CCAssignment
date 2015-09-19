@@ -1,4 +1,6 @@
 public class Solution02{
+	//calculate the frequency of each character, for s1, each character appears, frequency ++, in s2 if character appears, frequency --
+	//the code runs in constant space and O(n) time, n means the length of the string
 	public static boolean if_permutation(String s1, String s2){
 		if(s1.length()!=s2.length())
 			return false;
