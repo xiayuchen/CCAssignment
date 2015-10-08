@@ -1,0 +1,98 @@
+1.
+We took one pill from bottle 1, 2 pills from bottle 2 , 3 pills from bottle3...., and weight this pills,
+suppose the final weight is w. If all the pills have weight 1, then w should be 210g, the difference
+of w and 210 times 10 should be the index of the bottle that has pills of weight 1.1g.
+2.
+Suppose p is the probability of making a hoop, then the probabilities of winning the games are
+game 1 :p
+game 2: 3*(1-p)*p^2 + p^3
+From the representation we can calculate and find that when p<0.5 we choose game 1, and
+when p>0.5 we choose game 2.
+3. There is no such solution that could fill the board with 31 dominos.
+If we assign squares in the board with color black and white and no adjacent squares will have
+the same color. As each dominos covers adjacent squares, then each dominos will cover one
+black and one white. But the squares in the diagonal opposite corners have the same colors and
+they are cut, so the total number of black and the total number of white is different, so we can
+not cover them with dominos.
+4.
+If the first ants randomly select a path, then to avoid collision, the rest two ants only have one
+choice of sides to go. And as the choice of direction is random, so the possibility of collision is
+1-1/2*1/2=3/4
+For n-vertex polygon, the probability is 1-1/2^(n-1);
+5.
+1. full the 5 quart jug
+2. full the 3 quart jug with water from the 5 quart jug. After that, there is 2 quart water in the 5
+quart jug
+3. empty the 3 quart jug, and pour the water in the 5 quart jug to the 3 quart jug. Now the 5
+quart jug is empty, and 3 quart jug has 2 quart water
+4.full the 5 quart jug
+5. pour water from 5 quart jug to the 3 quart jug until the latter is full, then the water remains in
+the 5 quart jug is 4 quart
+6.
+First we consider some simple situation
+(1) If there is one blue-eyed person, he will notice that no other people has blue eyed and leave
+on the first day. So in this case it takes one day
+(2)If there is two blue-eyed person, the two will find there is one blue eyed person and neither
+of them will leave on the first day. Then in the next day, they find that the blue eyed person did
+not leave, so there is at least two blue eyed person, and they only sees one, so they will know
+that they are the one, and both of them will leave on the second day. So in this case it takes two
+day.
+(3) If there is 3 blue-eyed person, the blue-eyed person will see two blue-eyed person, and on
+the second day, no one leave, then they will notice that there is more than 2 blue-eyed person,
+so himself is the blue-eyed person, then all of them will leave on the third day.
+Suppose f(n) is the number of date it take for all blue eyed people leave when the number of
+them is n.
+From the previous reasoning , if there is n blue eyed people, after f(n-1) they will find that no
+one leaves, then they will realize the they are blue eyed and leave on the date f(n-1)+1
+and f(1)=1, So f(n)=n.
+7.
+In one family, they will have one girl, and the probability of they to have n boys is 1/2^(n+1),
+so the expectation of numbers of boys they have is
+Σ k ∗ (
+1
+2i+1)
+∞
+k=0
+To simulate this value we use
+public static void main(String[] args) throws IOException {
+int k=1000000;
+double factor=0.5;
+double number=0;
+for(int i=0;i<k;i++){
+number=number+i*factor;
+factor=factor/(double)2;
+}
+System.out.println(number);
+}
+we find that we k is bigger, the number is closer to 1, so the gender ratio in
+the new generation should be 1.
+8.
+A well balanced system should be one that make the sum of drop time of egg 1
+and 2 the same. So we should reduce the number of drop egg 1 by 1 every time.
+For this reason the longest number of step x should meet
+x+(x-1)+(x-2)+...+1=100, so x should be 14.
+9.
+Suppose each locker have a index from 1 to 100. Then the number of toggles
+each locker goes through will depend on the number of factors that they have.
+The locker that has odd number of factors will be open.
+If index n=i*j, when i!=j, the number of factors will increase by two, but if
+n=k*k, then number of factors will increase by 1. This means that when a index
+is a square of a interger, then if would have odd number of factor.
+And from 1 to 100, there is 10 square number, so there should be 10 lockers
+open.
+10.
+As it takes 7 days to get a test result, in every experiment, we should use as
+many test strip as possible.
+My solution is that:
+1 On the first round of experiment, we combine sodas from bottle 1~100,
+200~300,...,900~1000 together, and use the 10 strip to test the soda, then we
+will find 100 bottles that contains the poisonous one.
+This step takes 7 days, and we now have 9 strips
+2. Suppose the poisonous soda is in 0~100, then we combine sodas from bottle
+0~11, 12~22, 89~100, and use 9 strip to test the soda, and find the 11~12
+bottles than contains the poisonous one
+This step takes 7 days, and we now have 8 strips
+3 Then we do the same with the rest strips and bottles, in the worst case, we
+need to do two round of the test for 0~8 and 9~11.
+So in this solution in the worst case, it takes 4 weeks to find the poisonous
+bottle.
